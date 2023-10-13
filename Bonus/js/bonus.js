@@ -57,17 +57,20 @@ btnPlayDOMElement.addEventListener('click', function () {
         let cellDOMElement = gridDOMElements[i]
 
         if (selectedDifficulty === 81) {
+            
             cellDOMElement.classList.replace('cell', 'medium-grid')
         }
         else if (selectedDifficulty === 49) {
-            cellDOMElement.classList.replace('medium-grid', 'small-grid')
+
             cellDOMElement.classList.replace('cell', 'small-grid')
         }
 
         // - Creare un event listener che al click del singolo bottone aggiunga una classe al singolo elemento cliccato e stampi in console l 'html dell'elemento che abbia creato precedentemente
 
         cellDOMElement.addEventListener('click', function () {
+            
             cellDOMElement.classList.add('bg-light-blue')
+            
             console.log(cellDOMElement.innerHTML)
         })
 
@@ -79,10 +82,8 @@ btnPlayDOMElement.addEventListener('click', function () {
 function getGrid(container, cells) {
     for (let i = 1; i <= cells; i++) {
 
-
         const htmlString = ` <div class = "cell">${i}</div>`
-
-        // - Inserire gli elementi creati nell'html    
+    
         container.innerHTML += htmlString
 
     }
