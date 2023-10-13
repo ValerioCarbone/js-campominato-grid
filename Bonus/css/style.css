@@ -17,7 +17,7 @@
 .btn-play{
     text-align: center;
     margin-top: 30px;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
 }
 
 .section{
@@ -28,4 +28,26 @@
 
 .bg-light-blue{
     background-color: cornflowerblue;
+}
+
+#difficulty-selector{
+    margin-bottom: 30px;
+}
+
+.medium-grid{
+    flex-basis: calc((100% - 18px) / 9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+    border: 1px solid grey;     
+}
+
+.small-grid{
+    flex-basis: calc((100% - 14px) / 7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+    border: 1px solid grey;
 }
