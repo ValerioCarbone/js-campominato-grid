@@ -28,11 +28,9 @@ else if (difficulty === hard){
 
 btnPlayDOMElement.addEventListener('click', function () {
 
-    containerDOMElement.innerHTML = ''
-
     // - Creare una funzione con un ciclo for che generi una griglia    
-    // getGrid(containerDOMElement, selectedDifficulty)
-    for (let i = 1; i <= 100; i++) {
+    
+    for (let i = 1; i <= parseInt(difficulty); i++) {
 
         const htmlString = ` <div class = "cell">${i}</div>`
 
@@ -62,14 +60,4 @@ btnPlayDOMElement.addEventListener('click', function () {
 
 })
 
-
-// function getGrid(container,cells) {
-//     for (let i = 1; i <= cells; i++) {
-
-//         const htmlString = ` <div class = "cell">${i}</div>`
-
-//         container.innerHTML += htmlString
-
-//     }
-// }
 
