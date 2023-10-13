@@ -5,11 +5,33 @@ const btnPlayDOMElement = document.getElementById('btn-play')
 
 let containerDOMElement = document.querySelector('.container')
 
+let difficulty
+
+let selectedDifficulty
+
+function setDifficulty() {
+    difficulty = document.getElementById('difficulty-selector').value
+    console.log(difficulty)
+}
+
+if (difficulty === easy){
+    selectedDifficulty = 100
+}
+else if (difficulty === normal){
+    selectedDifficulty = 81
+}
+else if (difficulty === hard){
+    selectedDifficulty = 49
+}
+
+
+
 btnPlayDOMElement.addEventListener('click', function () {
 
     containerDOMElement.innerHTML = ''
 
     // - Creare una funzione con un ciclo for che generi una griglia    
+    // getGrid(containerDOMElement, selectedDifficulty)
     for (let i = 1; i <= 100; i++) {
 
         const htmlString = ` <div class = "cell">${i}</div>`
@@ -18,6 +40,7 @@ btnPlayDOMElement.addEventListener('click', function () {
         containerDOMElement.innerHTML += htmlString
 
     }
+
     // - Richiamare per classe tali elementi    
     const gridDOMElements = document.querySelectorAll('.cell')
 
@@ -39,4 +62,14 @@ btnPlayDOMElement.addEventListener('click', function () {
 
 })
 
+
+// function getGrid(container,cells) {
+//     for (let i = 1; i <= cells; i++) {
+
+//         const htmlString = ` <div class = "cell">${i}</div>`
+
+//         container.innerHTML += htmlString
+
+//     }
+// }
 
