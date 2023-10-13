@@ -6,10 +6,12 @@
 }
 
 .cell{
-    flex-basis: calc(100% / 10);
+    flex-basis: calc((100% - 20px) / 10);
     display: flex;
     justify-content: center;
     align-items: center;
+    aspect-ratio: 1;
+    border: 1px solid grey;
 }
 
 .btn-play{
@@ -22,4 +24,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.bg-light-blue{
+    background-color: cornflowerblue;
 }

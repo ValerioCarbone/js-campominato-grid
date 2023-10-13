@@ -3,12 +3,30 @@
 // - Richiamare l'elemento html del bottone e assegnargli l'evento click 
 const btnPlayDOMElement = document.getElementById('btn-play')
 
-const containerDOMElement = document.querySelector('.container')
+let containerDOMElement = document.querySelector('.container')
 
 btnPlayDOMElement.addEventListener('click', function () {
+    
+    // containerDOMElement = ('')
+    
     for (let i = 1; i <= 100; i++) {
-        const htmlString = ` <div class="cell">${i}</div>`
+        
+        const htmlString = ` <div class = "cell">${i}</div>`
+        
         containerDOMElement.innerHTML += htmlString
+
+    }
+    
+    const gridDOMElements = document.querySelectorAll('.cell')
+
+    for (let i = 0; i < gridDOMElements.length; i++){
+        
+        let cellDOMElement = gridDOMElements[i]
+        
+        cellDOMElement.addEventListener('click', function (){
+            cellDOMElement.classList.add('bg-light-blue')
+            console.log(cellDOMElement.innerHTML)
+        })
 
     }
     
@@ -18,5 +36,5 @@ btnPlayDOMElement.addEventListener('click', function () {
 // - Inserire gli elementi creati nell'html
 // - Richiamare per classe tali elementi
 // - Creare un for che cicli ogni elemento presente nella variabile precedentemente creata e assegnare ad ognuno un numero crescente che sarà uguale all'index del ciclo + 1 e agno ogni elemento aggiungere l'html con il numero rispettivo
-// - Creare un event listener che al click del singolo bottone aggiunga una classe al singolo elemento cliccato e stampi in console l 'html dell'elemento che abbia pcreato precedentemente
+// - Creare un event listener che al click del singolo bottone aggiunga una classe al singolo elemento cliccato e stampi in console l 'html dell'elemento che abbia creato precedentemente
 
