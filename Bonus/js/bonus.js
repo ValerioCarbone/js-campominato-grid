@@ -5,25 +5,18 @@ const btnPlayDOMElement = document.getElementById('btn-play')
 
 let containerDOMElement = document.querySelector('.container')
 
-let difficulty  = 'easy'
+let difficulty = 'easy'
 
 
 let selectedDifficulty = 100
 
 function setDifficulty() {
     difficulty = document.getElementById('difficulty-selector').value
-    console.log(difficulty)
 }
 
 
 
-
-
-
-
-
 btnPlayDOMElement.addEventListener('click', function () {
-    console.log(selectedDifficulty)
 
     containerDOMElement.innerHTML = ''
 
@@ -36,20 +29,22 @@ btnPlayDOMElement.addEventListener('click', function () {
     else if (difficulty === 'hard') {
         selectedDifficulty = 49
     }
-    
+
 
 
     // - Creare una funzione con un ciclo for che generi una griglia    
 
-    for (let i = 1; i <= selectedDifficulty; i++) {
+    // for (let i = 1; i <= selectedDifficulty; i++) {
 
 
-        const htmlString = ` <div class = "cell">${i}</div>`
+    //     const htmlString = ` <div class = "cell">${i}</div>`
 
-        // - Inserire gli elementi creati nell'html    
-        containerDOMElement.innerHTML += htmlString
+    //     // - Inserire gli elementi creati nell'html    
+    //     containerDOMElement.innerHTML += htmlString
 
-    }
+    // }
+
+    getGrid(containerDOMElement, selectedDifficulty)
 
     // - Richiamare per classe tali elementi    
     const gridDOMElements = document.querySelectorAll('.cell')
@@ -61,12 +56,12 @@ btnPlayDOMElement.addEventListener('click', function () {
 
         let cellDOMElement = gridDOMElements[i]
 
-        if (selectedDifficulty === 81){
-            cellDOMElement.classList.replace('cell','medium-grid')  
+        if (selectedDifficulty === 81) {
+            cellDOMElement.classList.replace('cell', 'medium-grid')
         }
-        else if (selectedDifficulty === 49){
-            cellDOMElement.classList.replace('medium-grid','small-grid')
-            cellDOMElement.classList.replace('cell','small-grid')
+        else if (selectedDifficulty === 49) {
+            cellDOMElement.classList.replace('medium-grid', 'small-grid')
+            cellDOMElement.classList.replace('cell', 'small-grid')
         }
 
         // - Creare un event listener che al click del singolo bottone aggiunga una classe al singolo elemento cliccato e stampi in console l 'html dell'elemento che abbia creato precedentemente
@@ -81,3 +76,14 @@ btnPlayDOMElement.addEventListener('click', function () {
 })
 
 
+function getGrid(container, cells) {
+    for (let i = 1; i <= cells; i++) {
+
+
+        const htmlString = ` <div class = "cell">${i}</div>`
+
+        // - Inserire gli elementi creati nell'html    
+        container.innerHTML += htmlString
+
+    }
+}
